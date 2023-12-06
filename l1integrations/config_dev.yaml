@@ -1,0 +1,66 @@
+server:
+  port: "8080"
+
+infura:
+  mainnet: "https://mainnet.infura.io/v3/9ca7d6fb178d4b37bc350a70c04374be"
+  goerli: "https://goerli.infura.io/v3/9ca7d6fb178d4b37bc350a70c04374be"
+  fuji: "https://avalanche-fuji.infura.io/v3/0ca19a55941d4efcbe7ca017d623adea"
+
+ethereum:
+  chainId: 5 #1 Mainnet #5 Goerli test network 
+  etherscanAPIKEY: "M3SF4WTDC4NWQIIVNAZDFXBW1SW49QWDNZ"
+  etherscanURL: "https://api-goerli.etherscan.io/api"
+  stakingContract: "0x8c5fecdc472e27bc447696f431e425d02dd46a8c"
+  etherscanURLGasOracle: "https://api.etherscan.io/api?module=gastracker&action=gasoracle&apikey="
+  oneInchApi: "https://api.1inch.exchange/v5.0/1/%s"
+
+bitcoin:
+  chainId: "testnet"
+
+algorand:
+  chainId: "testnet"
+  uri: "http://13.59.212.153:4001"
+  token: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+
+blockdaemon:
+  accessToken: "97qZLAsdw5k42VziA5qWFkNXEvTduBpoH55pmWtuI8TKNdjM"
+  bitcoin:
+    uri: "https://svc.blockdaemon.com/universal/v1/bitcoin/testnet/"
+
+quicknode:
+  fuji:
+    xChain: "https://serene-snowy-season.avalanche-testnet.discover.quiknode.pro/9577c80811378ebaa74a72d1ca2023adbc85f789/ext/bc/X"
+    pChain: "https://serene-snowy-season.avalanche-testnet.discover.quiknode.pro/9577c80811378ebaa74a72d1ca2023adbc85f789/ext/bc/P"
+    cChain: "https://serene-snowy-season.avalanche-testnet.discover.quiknode.pro/9577c80811378ebaa74a72d1ca2023adbc85f789/ext/bc/C/avax"
+
+near:
+  testnet: "http://rpc.testnet.near.org"
+  mainnet: "https://rpc.mainnet.near.org"
+
+bsc:
+  testnet: "https://data-seed-prebsc-1-s1.binance.org:8545"
+  mainnnet: "https://bsc-dataseed.binance.org"
+  bscScanUrl: "https://api.bscscan.com/api?module=gastracker&action=gasoracle&apikey="
+  bscScanApiKey: "U5MJ121G56HGBB2A6PX25I1B3ZC7WHEM79"
+  oneInchApi: "https://api.1inch.exchange/v5.0/56/%s"
+
+polygon:
+  testnet: "https://polygon-mumbai.infura.io/v3/9ca7d6fb178d4b37bc350a70c04374be"
+  mainnet: "https://polygon-mainnet.infura.io/v3/9ca7d6fb178d4b37bc350a70c04374be"
+  polygonScanUrl: "https://api.polygonscan.com/api?module=gastracker&action=gasoracle&apikey="
+  polygonScanApiKey: "1PVEAJVVCUZ8JABNH3E1SE4QFE16HEF8JY"
+  oneInchApi: "https://api.1inch.exchange/v5.0/137/%s"
+
+chainids:
+  ethereum:
+    testnet: 5
+    mainnet: 1
+  polygon:
+    testnet: 80001
+    mainnet: 137
+  bsc:
+    testnet: 97
+    mainnet: 56
+  avalanche:
+    testnet: 43113
+    mainnet: 43114

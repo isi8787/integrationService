@@ -1,0 +1,29 @@
+
+#  This template allows you to validate your Go (Golang) code.
+#  The workflow allows running tests, build and code linting on the default branch.
+
+image: golang:1.19
+
+pipelines:
+  default:
+    - step:
+        name: Test and Build
+        script:
+          - apt-get update && apt-get install -y zip
+          - /bin/bash bitbucket-pipelines.sh
+          - env GOARCH=amd64 GOOS=linux go build -o l1integration main.go
+          - zip l1integration.zip l1integration config_dev.yaml
+          - ls
+        artifacts:
+          - l1integration.zip
+    - step:
+        name: Update Lambda code
+        script:
+          - pipe: atlassian/aws-lambda-deploy:1.8.0
+            variables:
+              AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+              AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+              AWS_DEFAULT_REGION: 'us-east-2'
+              FUNCTION_NAME: 'l1integration'
+              COMMAND: 'update'
+              ZIP_FILE: 'l1integration.zip'
